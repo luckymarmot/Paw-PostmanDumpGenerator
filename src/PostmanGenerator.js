@@ -2274,6 +2274,18 @@
 	            var param = null;
 	            var auths = _auths;
 
+	            if (!ds) {
+	                param = new _Core.Parameter({
+	                    key: key,
+	                    name: key,
+	                    type: 'string',
+	                    format: 'sequence',
+	                    value: new _immutable2.default.List(),
+	                    externals: externals
+	                });
+	                return [param, auths];
+	            }
+
 	            if (ds.length > 1) {
 	                var value = new _immutable2.default.List();
 	                if (isAuth) {
@@ -2501,6 +2513,18 @@
 	        key: '_formatQueryParam',
 	        value: function _formatQueryParam(key, ds, externals) {
 	            var param = null;
+
+	            if (!ds) {
+	                param = new _Core.Parameter({
+	                    key: key,
+	                    name: key,
+	                    type: 'string',
+	                    format: 'sequence',
+	                    value: new _immutable2.default.List(),
+	                    externals: externals
+	                });
+	                return param;
+	            }
 
 	            if (ds.length > 1) {
 	                var value = new _immutable2.default.List();
